@@ -25,6 +25,8 @@ Given('o passageiro de nome <name> que está com saúde <isHealthy> e tem <food>
     data.forEach(passenger => {
         let values          = Object.values(passenger)
         let newPassenger    = new Traveler(...values);
+        newPassenger.isHealthy = values[1]
+        newPassenger.food = values[2]
         passengers.push(newPassenger);
     })
 });
@@ -56,6 +58,7 @@ When('o passageiro {string} tentar subir a bordo', function (string) {
 /** THEN */
 
 Then('responderei que temos {int} refeições', function (int) {
+    // totalFood = carroca.totalFood()
     assert.strictEqual(totalFood, int);
 });
 
@@ -64,6 +67,7 @@ Then('a resposta deverá ser Não', function () {
 });
 
 Then('a resposta deverá ser Sim', function () {
+    // shouldQuarantine = carroca.shouldQuarantine()
     assert.strictEqual(shouldQuarantine, true);
 });
 
@@ -77,15 +81,10 @@ Then('ele não deverá ser adicionada à lista de passageiros', function () {
 Then('ele deverá ser adicionada à lista de passageiros', function () {
     let filter = carroca.passengers.filter(passenger => passenger.name === triedToComeAboard.name);
     let isAboard = filter.length > 0;
-
     assert.strictEqual(isAboard, true);
 });
 
 Then('devo responder que a quantidade de assentos disponíveis é {int}', function (int) {
+    availableSeat = carroca.getAvailableSeatCount();
     assert.strictEqual(availableSeat, int);
 });
-
-
-
-
-
