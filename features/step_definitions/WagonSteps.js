@@ -58,7 +58,6 @@ When('o passageiro {string} tentar subir a bordo', function (string) {
 /** THEN */
 
 Then('responderei que temos {int} refeições', function (int) {
-    // totalFood = carroca.totalFood()
     assert.strictEqual(totalFood, int);
 });
 
@@ -67,7 +66,6 @@ Then('a resposta deverá ser Não', function () {
 });
 
 Then('a resposta deverá ser Sim', function () {
-    // shouldQuarantine = carroca.shouldQuarantine()
     assert.strictEqual(shouldQuarantine, true);
 });
 
