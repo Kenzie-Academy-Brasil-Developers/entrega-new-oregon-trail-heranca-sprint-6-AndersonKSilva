@@ -2,8 +2,7 @@
 
 Funcionalidade: Doctor
     Como um Doctor
-    Eu devo racionar meus mantimentos
-    E curar aqueles que não estiverem saudáveis
+    Eu devo curar aqueles que não estiverem saudáveis
     Para que possamos seguir a viagem.
 
     Contexto:
